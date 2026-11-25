@@ -1,8 +1,8 @@
 {
-  "versionCode": 2,
-  "versionName": "1.1.0",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.1.0/StretchCoach.apk",
-  "sha256": "98472060788f4ac394e634d65cc190311ee8af090c774da5adc670bb5cd44ee6",
-  "sizeBytes": 49965728,
-  "releaseNotes": "Roaming Cat & Dog Pack V2: 12 cushion-free roaming Golden Puppy actions, 12 roaming Calico Cat actions (chase butterfly, knead paws, belly flop), and exact pixel-measured zero-overlap roaming lanes for all 125 poses."
+  "versionCode": 3,
+  "versionName": "1.1.1",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.1.1/StretchCoach.apk",
+  "sha256": "1d6685d30bf5b81dbb2a6650851a248866f5b889a156f707b545d08203b301d1",
+  "sizeBytes": 52678261,
+  "releaseNotes": "Brought back the original cozy Mat Puppy! Pick between Off, Mat Puppy (resting on mat), Roam Puppy (12 roaming actions), or Calico Cat (12 roaming actions) anytime in Settings -> Studio -> Studio Companion."
 }
