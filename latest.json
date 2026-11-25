@@ -1,8 +1,8 @@
 {
-  "versionCode": 3,
-  "versionName": "1.1.1",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.1.1/StretchCoach.apk",
-  "sha256": "1d6685d30bf5b81dbb2a6650851a248866f5b889a156f707b545d08203b301d1",
-  "sizeBytes": 52678261,
-  "releaseNotes": "Brought back the original cozy Mat Puppy! Pick between Off, Mat Puppy (resting on mat), Roam Puppy (12 roaming actions), or Calico Cat (12 roaming actions) anytime in Settings -> Studio -> Studio Companion."
+  "versionCode": 4,
+  "versionName": "1.2.0",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.2.0/StretchCoach.apk",
+  "sha256": "ed8b381cc53cd972e4e2c596228f18a2f4c82b27a032ae43d092a4d4ae698cff",
+  "sizeBytes": 46571956,
+  "releaseNotes": "Roaming Pack V2 + Compression (44 MB): Fixed Roaming Puppy blue-key chroma (sage-olive collar preserved!), restored canonical Cozy Mat Puppy alongside Roaming Puppy & Calico Cat, and compressed all 36 overlays & meditation audio (-6 MB smaller APK)."
 }
