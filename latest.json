@@ -1,8 +1,8 @@
 {
-  "versionCode": 4,
-  "versionName": "1.2.0",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.2.0/StretchCoach.apk",
-  "sha256": "ed8b381cc53cd972e4e2c596228f18a2f4c82b27a032ae43d092a4d4ae698cff",
+  "versionCode": 5,
+  "versionName": "1.2.1",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.2.1/StretchCoach.apk",
+  "sha256": "c006a573c38391e4f3a967c17920c2f5c1dbdcc9d1fc4bb1c2472574495d0afd",
   "sizeBytes": 46571956,
-  "releaseNotes": "Roaming Pack V2 + Compression (44 MB): Fixed Roaming Puppy blue-key chroma (sage-olive collar preserved!), restored canonical Cozy Mat Puppy alongside Roaming Puppy & Calico Cat, and compressed all 36 overlays & meditation audio (-6 MB smaller APK)."
+  "releaseNotes": "Smart Flow is now a 2-way toggle! Pressing Flow saves your original order and pressing it again ('Flow \u2713') restores the exact original order \u2014 including recovering built-in routines like Subah Subah."
 }
