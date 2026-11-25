@@ -1,8 +1,8 @@
 {
-  "versionCode": 5,
-  "versionName": "1.2.1",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.2.1/StretchCoach.apk",
-  "sha256": "c006a573c38391e4f3a967c17920c2f5c1dbdcc9d1fc4bb1c2472574495d0afd",
+  "versionCode": 6,
+  "versionName": "1.2.2",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.2.2/StretchCoach.apk",
+  "sha256": "c12f258892a2311b71aac15eb22d92ac48bb57271f00e06560f35135bf4daa0c",
   "sizeBytes": 46571956,
-  "releaseNotes": "Smart Flow is now a 2-way toggle! Pressing Flow saves your original order and pressing it again ('Flow \u2713') restores the exact original order \u2014 including recovering built-in routines like Subah Subah."
+  "releaseNotes": "Made Cozy Mat Puppy, Roaming Puppy, and Calico Cat ~30% larger and clearer on both Portrait and Landscape screens."
 }
