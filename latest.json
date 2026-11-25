@@ -1,8 +1,8 @@
 {
-  "versionCode": 6,
-  "versionName": "1.2.2",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.2.2/StretchCoach.apk",
-  "sha256": "c12f258892a2311b71aac15eb22d92ac48bb57271f00e06560f35135bf4daa0c",
-  "sizeBytes": 46571956,
-  "releaseNotes": "Made Cozy Mat Puppy, Roaming Puppy, and Calico Cat ~30% larger and clearer on both Portrait and Landscape screens."
+  "versionCode": 7,
+  "versionName": "1.2.3",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.2.3/StretchCoach.apk",
+  "sha256": "a530f955883214cae4ffa192b2548019300a81de7631aed57e27ccfd62dd5218",
+  "sizeBytes": 46715813,
+  "releaseNotes": "Fixed Roaming Puppy visibility on all poses (rests quietly in corner on wide poses and roams on open-floor poses), cleaner instant pet switching, and dialed companion size down ~10%."
 }
