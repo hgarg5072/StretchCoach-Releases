@@ -1,8 +1,8 @@
 {
-  "versionCode": 12,
-  "versionName": "1.4.2",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.4.2/StretchCoach.apk",
-  "sha256": "ee7e578c5f6fe87469888fa3cfa57ff690e6a6e3e55872dfe64fac3e0fe8026b",
+  "versionCode": 13,
+  "versionName": "1.4.3",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.4.3/StretchCoach.apk",
+  "sha256": "c001625a99d9573a9d192954f98ebd60c1048e25684ffcb341f45f65b0a5c654",
   "sizeBytes": 47179664,
-  "releaseNotes": "Much faster AI Routine Coach: uses Gemini 3.8 Flash-Lite (minimal thinking) with automatic fallback to Gemini 3.8 Flash, skips AICore probe on cloud-only phones, and adds instant offline detection."
+  "releaseNotes": "AI Routine Coach now switches automatically to Instant Smart Flow (offline, no chatbot) if no AI response arrives within 3 seconds."
 }
