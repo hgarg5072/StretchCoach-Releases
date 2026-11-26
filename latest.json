@@ -1,8 +1,8 @@
 {
-  "versionCode": 8,
-  "versionName": "1.3.0",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.3.0/StretchCoach.apk",
-  "sha256": "6ed64fb95732eba1f23f36584beacef4f944e01580781bddd0cae12752a5ea1c",
+  "versionCode": 9,
+  "versionName": "1.3.1",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.3.1/StretchCoach.apk",
+  "sha256": "7871a99ca7c2e90d049a0e0ab7d6f2213efd95035c474a2f84102ab8901b6645",
   "sizeBytes": 46715817,
-  "releaseNotes": "Big floating AI Coach button on bottom-right, live NPU/TPU hardware chip display in AI Mode, Day Mode & cleaner timing-only voice defaults, removed Quick Verify demo, and renamed Subah Subah to Nisha's Custom Stretch."
+  "releaseNotes": "Merged 15 duplicate English/Sanskrit stretches into 135 unique stretches (130+ catalog) and added visual pose deduplication in AI Routine Coach so the same stretch never appears twice."
 }
