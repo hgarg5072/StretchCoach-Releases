@@ -3,167 +3,775 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stretch Coach — Official Android Releases</title>
+  <title>Stretch Coach — Sunlit Yoga & Mobility Sanctuary for Android</title>
+  <meta name="description" content="Offline-first Android yoga & mobility coaching app with 150 bilingual poses, living Studio Ghibli sanctuary, voice guidance, and on-device AI Routine Coach." />
+  <link rel="icon" type="image/webp" href="./assets/icon.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #f6efe2;
-      --card: #fffcf6;
-      --ink: #231f1b;
-      --muted: #665d53;
-      --accent: #2c7a6b;
-      --accent-dark: #205c50;
-      --border: #e5d9c3;
+      --bg-deep: #ede1cc;
+      --surface: #fffdf8;
+      --surface-warm: #f9f3e7;
+      --ink: #221d17;
+      --muted: #64594d;
+      --accent: #276e5d;
+      --accent-hover: #1d5749;
+      --accent-soft: #e4f2ed;
+      --amber: #c97f2d;
+      --amber-soft: #fbf0df;
+      --border: rgba(89, 70, 44, 0.14);
+      --shadow-sm: 0 6px 20px rgba(45, 34, 18, 0.06);
+      --shadow-lg: 0 22px 54px rgba(45, 34, 18, 0.12);
     }
+
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(180deg, #f3e8d4 0%, #f9f4ea 55%, #efe3ce 100%);
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: var(--ink);
+      background:
+        radial-gradient(1200px 560px at 15% -10%, rgba(255, 226, 173, 0.55), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(169, 214, 198, 0.35), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, #faf5eb 52%, var(--bg-deep) 100%);
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 28px 16px 48px;
+      -webkit-font-smoothing: antialiased;
     }
-    .wrap {
+
+    .container {
       width: 100%;
-      max-width: 640px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 20px 18px 64px;
     }
-    .card {
-      background: var(--card);
+
+    /* Top Navigation Bar */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding: 6px 4px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(34, 29, 23, 0.14);
+    }
+
+    .brand-name {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 700;
+      font-size: 19px;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-pill {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      padding: 7px 12px;
+      border-radius: 999px;
       border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 28px 24px;
-      box-shadow: 0 14px 36px rgba(45, 34, 20, 0.08);
+      background: rgba(255, 253, 248, 0.72);
+      backdrop-filter: blur(8px);
+      transition: all 0.18s ease;
     }
-    .badge-row {
+
+    .nav-pill:hover {
+      color: var(--accent);
+      border-color: rgba(39, 110, 93, 0.35);
+      background: #fff;
+    }
+
+    /* Hero Sanctuary Card */
+    .hero {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #231e18;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      min-height: 410px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 42%;
+      transform: scale(1.02);
+      filter: saturate(1.06) brightness(0.92);
+    }
+
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(22, 18, 13, 0.18) 0%, rgba(22, 18, 13, 0.42) 48%, rgba(20, 16, 12, 0.88) 100%),
+        linear-gradient(90deg, rgba(20, 16, 12, 0.72) 0%, rgba(20, 16, 12, 0.18) 65%, transparent 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 36px 32px 32px;
+      color: #fffdf8;
+    }
+
+    .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-bottom: 14px;
     }
-    .badge {
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-size: 12px;
       font-weight: 600;
-      padding: 5px 10px;
+      padding: 5px 12px;
       border-radius: 999px;
-      background: #e8f3ef;
-      color: var(--accent-dark);
+      background: rgba(255, 252, 244, 0.16);
+      border: 1px solid rgba(255, 252, 244, 0.28);
+      backdrop-filter: blur(10px);
+      color: #fffaf0;
     }
-    h1 {
-      margin: 0 0 8px;
-      font-size: 30px;
+
+    .hero-pill.accent {
+      background: rgba(52, 158, 132, 0.35);
+      border-color: rgba(145, 232, 208, 0.45);
+    }
+
+    .hero h1 {
+      font-family: "Fraunces", Georgia, serif;
+      margin: 0 0 10px;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.08;
       letter-spacing: -0.02em;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
     }
-    .subtitle {
-      margin: 0 0 22px;
-      color: var(--muted);
-      line-height: 1.5;
-      font-size: 15px;
+
+    .hero-sub {
+      margin: 0 0 24px;
+      max-width: 600px;
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: rgba(255, 250, 240, 0.88);
     }
-    .cta {
+
+    .cta-row {
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      width: 100%;
-      text-decoration: none;
-      background: var(--accent);
+      padding: 14px 24px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #2d836f 0%, #216353 100%);
       color: #ffffff;
       font-weight: 700;
-      font-size: 16px;
-      padding: 15px 20px;
-      border-radius: 14px;
-      transition: background 0.15s ease;
+      font-size: 15.5px;
+      text-decoration: none;
+      box-shadow: 0 10px 26px rgba(21, 78, 65, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
     }
-    .cta:hover { background: var(--accent-dark); }
-    .meta {
-      margin-top: 12px;
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(21, 78, 65, 0.52);
+      filter: brightness(1.06);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-radius: 15px;
+      background: rgba(255, 252, 244, 0.14);
+      color: #fffdf8;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 252, 244, 0.28);
+      backdrop-filter: blur(10px);
+      transition: background 0.16s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 252, 244, 0.24);
+    }
+
+    .hero-meta {
+      margin-top: 14px;
+      font-size: 12.5px;
+      color: rgba(255, 250, 240, 0.72);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Release Notes Banner */
+    .release-banner {
+      margin-top: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .release-tag {
+      flex-shrink: 0;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--amber-soft);
+      color: #8f5313;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-top: 2px;
+    }
+
+    .release-body h2 {
+      margin: 0 0 4px;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .release-body p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    /* Section Heading */
+    .section-head {
+      margin: 36px 0 14px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .section-head h2 {
+      font-family: "Fraunces", Georgia, serif;
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: -0.015em;
+    }
+
+    .section-head span {
       font-size: 13px;
       color: var(--muted);
-      text-align: center;
+      font-weight: 500;
     }
-    .section {
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
+
+    /* Pose Showcase Strip */
+    .pose-strip {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
     }
-    .section h2 {
-      margin: 0 0 10px;
-      font-size: 16px;
-    }
-    ul, ol {
-      margin: 0;
-      padding-left: 20px;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
-    }
-    .sha {
-      margin-top: 8px;
-      padding: 10px 12px;
-      background: #f5efe3;
+
+    .pose-card {
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 11.5px;
-      word-break: break-all;
-      color: #463f37;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    footer {
-      margin-top: 18px;
-      text-align: center;
-      font-size: 12.5px;
+
+    .pose-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(45, 34, 18, 0.11);
+    }
+
+    .pose-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: var(--surface-warm);
+    }
+
+    .pose-caption {
+      padding: 10px 11px 11px;
+    }
+
+    .pose-caption strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pose-caption span {
+      display: block;
+      margin-top: 2px;
+      font-size: 11.5px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Feature Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 6px;
+      font-size: 15.5px;
+      font-weight: 700;
+    }
+
+    .feature-card p {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.55;
       color: var(--muted);
+    }
+
+    /* Install & Verify 2-Column Panel */
+    .bottom-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .panel h3 {
+      font-family: "Fraunces", Georgia, serif;
+      margin: 0 0 12px;
+      font-size: 19px;
+    }
+
+    .steps {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 13.8px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .sha-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .sha-box {
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: var(--surface-warm);
+      border: 1px solid var(--border);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11.5px;
+      line-height: 1.5;
+      word-break: break-all;
+      color: #463e34;
+    }
+
+    .sha-actions {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-ghost {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 13px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    footer {
+      margin-top: 36px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 820px) {
+      .pose-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .pose-strip .pose-card:last-child {
+        display: none;
+      }
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container { padding: 14px 14px 48px; }
+      .hero { min-height: 430px; border-radius: 22px; }
+      .hero-content { padding: 24px 20px 22px; }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-secondary { width: 100%; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .release-banner { flex-direction: column; gap: 8px; }
+      .nav-pill.hide-sm { display: none; }
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card">
-      <div class="badge-row">
-        <span class="badge">100% Offline</span>
-        <span class="badge">Zero Ads</span>
-        <span class="badge">Zero Tracking</span>
-        <span class="badge">SHA-256 Verified</span>
-      </div>
-      <h1>Stretch Coach</h1>
-      <p class="subtitle">
-        A calm, Studio Ghibli-inspired Android yoga &amp; mobility coach with 150 bilingual poses,
-        animated studio companions, voice guidance, and built-in 1-tap updates.
-      </p>
-
-      <a class="cta" href="https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.2.3/StretchCoach.apk">
-        Download Stretch Coach <!--VERSION-->v1.2.3<!--/VERSION--> (<!--SIZE-->44.6 MB<!--/SIZE-->)
+  <div class="container">
+    <header class="topbar">
+      <a class="brand" href="#">
+        <img src="./assets/icon.webp" alt="Stretch Coach icon" />
+        <span class="brand-name">Stretch Coach</span>
       </a>
-      <div class="meta">Android 8.0+ (ARM64 / ARMv7) • Future updates happen in 1 tap right inside the app</div>
+      <nav class="nav-links">
+        <a class="nav-pill hide-sm" href="#features">Features</a>
+        <a class="nav-pill hide-sm" href="#install">Install</a>
+        <a class="nav-pill" href="https://github.com/hgarg5072/StretchCoach-Releases/releases" target="_blank" rel="noopener">All Releases</a>
+      </nav>
+    </header>
 
-      <div class="section">
-        <h2>Highlights</h2>
-        <ul>
-          <li><strong>150 Bilingual Stretches &amp; 8 Built-In Routines:</strong> Includes the 52-step <em>Subah Subah</em> morning reset and timer-free <em>Surya Namaskar</em> flow.</li>
-          <li><strong>Living Studio Atmosphere:</strong> Day/Sunset/Night lighting, roaming Calico Cat or Golden Puppy companion, Glass Furin Wind Chime, and gentle breeze shader.</li>
-          <li><strong>Offline Voice &amp; Meditation Audio:</strong> Calm spoken cues, 5-second countdown, and bundled 9-minute ambient meditation music.</li>
-        </ul>
+    <!-- Sunlit Sanctuary Hero -->
+    <section class="hero">
+      <img class="hero-bg" src="./assets/sanctuary.webp" alt="Sunlit Studio Ghibli yoga sanctuary" />
+      <div class="hero-scrim"></div>
+      <div class="hero-content">
+        <div class="pill-row">
+          <span class="hero-pill accent" id="hero-version"><!--VERSION-->v1.2.3<!--/VERSION--></span>
+          <span class="hero-pill" id="hero-size"><!--SIZE-->44.6 MB<!--/SIZE--></span>
+          <span class="hero-pill">Android 8.0+ • Offline-First</span>
+          <span class="hero-pill">Pixel TPU / NPU Ready</span>
+        </div>
+
+        <h1>Your Sunlit Yoga &amp; Mobility Sanctuary</h1>
+        <p class="hero-sub">
+          150 bilingual stretches &amp; Indian asanas, 112 looping Studio Ghibli pose videos, a living studio atmosphere with roaming companions, offline voice coaching, and an on-device AI Routine Coach.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn-primary" id="download-btn" href="https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.2.3/StretchCoach.apk">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span>Download Android APK</span>
+          </a>
+          <a class="btn-secondary" href="https://github.com/hgarg5072/StretchCoach-Releases/releases/latest" target="_blank" rel="noopener">
+            View Release on GitHub
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span>✓ Signed &amp; SHA-256 verified</span>
+          <span>•</span>
+          <span>✓ No ads or subscriptions</span>
+          <span>•</span>
+          <span>✓ 1-tap in-app updates</span>
+        </div>
       </div>
+    </section>
 
-      <div class="section">
-        <h2>First-Time Install (30 seconds)</h2>
-        <ol>
-          <li>Tap <strong>Download Stretch Coach</strong> above and open the downloaded APK.</li>
-          <li>If Android asks, allow installs from your browser once, then tap <strong>Install</strong>.</li>
-          <li>After installation, all future updates check &amp; verify SHA-256 automatically inside Stretch Coach.</li>
+    <!-- Latest Release Notes -->
+    <section class="release-banner" aria-label="Latest release notes">
+      <span class="release-tag">What's New</span>
+      <div class="release-body">
+        <h2>Latest Release (<span id="notes-version">v1.2.3</span>)</h2>
+        <p id="release-notes"><!--NOTES-->Fixed Roaming Puppy visibility on all poses (rests quietly in corner on wide poses and roams on open-floor poses), cleaner instant pet switching, dialed companion size down ~10%, and added the 3-tier Hybrid AI Routine Coach (On-Device NPU/TPU Gemini Nano + Cloud + Offline Smart Flow).<!--/NOTES--></p>
+      </div>
+    </section>
+
+    <!-- Studio Pose Gallery -->
+    <div class="section-head">
+      <h2>Hand-Painted Studio Poses</h2>
+      <span>112 looping videos + 12 posture transitions</span>
+    </div>
+    <section class="pose-strip">
+      <article class="pose-card">
+        <img src="./assets/pose_surya.webp" alt="Surya Namaskar flow" loading="lazy" />
+        <div class="pose-caption">
+          <strong>Surya Namaskar</strong>
+          <span>सूर्य नमस्कार • Flow Mode</span>
+        </div>
+      </article>
+      <article class="pose-card">
+        <img src="./assets/pose_cobra.webp" alt="Bhujangasana Cobra Pose" loading="lazy" />
+        <div class="pose-caption">
+          <strong>Cobra Pose</strong>
+          <span>भुजंगासन • Spine</span>
+        </div>
+      </article>
+      <article class="pose-card">
+        <img src="./assets/pose_lotus.webp" alt="Padmasana Lotus Pose" loading="lazy" />
+        <div class="pose-caption">
+          <strong>Lotus Pose</strong>
+          <span>पद्मासन • Seated</span>
+        </div>
+      </article>
+      <article class="pose-card">
+        <img src="./assets/pose_tree.webp" alt="Vrikshasana Tree Pose" loading="lazy" />
+        <div class="pose-caption">
+          <strong>Tree Pose</strong>
+          <span>वृक्षासन • Balance</span>
+        </div>
+      </article>
+      <article class="pose-card">
+        <img src="./assets/pose_warrior.webp" alt="Virabhadrasana Warrior Pose" loading="lazy" />
+        <div class="pose-caption">
+          <strong>Warrior Pose</strong>
+          <span>वीरभद्रासन • Strength</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Features Grid -->
+    <div class="section-head" id="features">
+      <h2>Crafted for Daily Practice</h2>
+      <span>45 MB all-in-one offline APK</span>
+    </div>
+    <section class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🌿</div>
+        <h3>Living Studio Atmosphere</h3>
+        <p>OpenGL ES 2.0 Monstera breeze shader, Auto Ghibli day/sunset/night lighting props, wind chimes, and person-safe roaming puppy &amp; calico cat companions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✨</div>
+        <h3>On-Device AI Routine Coach</h3>
+        <p>Describe how your body feels in plain English. Runs Gemini Nano directly on Pixel Tensor TPU &amp; supported NPUs, with automatic cloud &amp; offline Smart Flow fallback.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧘</div>
+        <h3>150 Bilingual Poses &amp; 8 Routines</h3>
+        <p>English + Devanagari (हिन्दी / संस्कृत) names, the 52-step <em>Subah Subah</em> morning flow, and timer-free continuous <em>Surya Namaskar</em> rounds.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3>Smart Flow Posture Transitions</h3>
+        <p>2-way Smart Flow orders stretches smoothly across Standing, Kneeling, Prone, Supine, and Seated hubs with animated transition clips.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔊</div>
+        <h3>Voice Coaching &amp; Meditation Audio</h3>
+        <p>Offline Google TTS prep/hold cues with 5-second spoken countdowns and a bundled 9-minute ambient meditation track that auto-ducks for voice.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Offline-First &amp; 1-Tap Updates</h3>
+        <p>Every pose video, audio track, and routine works without internet. Future versions install directly inside Settings with SHA-256 verification.</p>
+      </div>
+    </section>
+
+    <!-- Install & SHA-256 Verification -->
+    <section class="bottom-grid" id="install">
+      <div class="panel">
+        <h3>How to Install on Android</h3>
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <span>Tap <strong>Download Android APK</strong> above on your Android phone.</span>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <span>Open the downloaded <code>StretchCoach.apk</code> file. If prompted, allow <em>Install unknown apps</em> for your browser.</span>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <span>Already have Stretch Coach installed? Just open <strong>Settings → Check for Updates</strong> for a 1-tap in-app upgrade.</span>
+          </li>
         </ol>
       </div>
 
-      <div class="section">
-        <h2>APK Integrity (SHA-256)</h2>
-        <div class="sha"><!--SHA256-->a530f955883214cae4ffa192b2548019300a81de7631aed57e27ccfd62dd5218<!--/SHA256--></div>
+      <div class="panel">
+        <h3>Integrity &amp; Verification</h3>
+        <div class="sha-label">SHA-256 Checksum</div>
+        <div class="sha-box" id="sha-value"><!--SHA256-->a530f955883214cae4ffa192b2548019300a81de7631aed57e27ccfd62dd5218<!--/SHA256--></div>
+        <div class="sha-actions">
+          <button type="button" class="btn-ghost" id="copy-sha-btn">Copy SHA-256</button>
+          <a class="btn-ghost" href="./latest.json" target="_blank" rel="noopener">latest.json</a>
+        </div>
       </div>
     </section>
+
     <footer>
-      Official release channel hosted on GitHub Releases &bull; No analytics or third-party ad SDKs.
+      Stretch Coach • Built with Kotlin, Jetpack Compose, OpenGL ES 2.0 &amp; Firebase AI Logic •
+      <a href="https://github.com/hgarg5072/StretchCoach-Releases" target="_blank" rel="noopener">GitHub Releases</a>
     </footer>
-  </main>
+  </div>
+
+  <script>
+    (function () {
+      // Copy SHA-256 helper
+      var copyBtn = document.getElementById("copy-sha-btn");
+      var shaEl = document.getElementById("sha-value");
+      if (copyBtn && shaEl) {
+        copyBtn.addEventListener("click", function () {
+          var text = shaEl.textContent.trim();
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () {
+              copyBtn.textContent = "Copied!";
+              setTimeout(function () { copyBtn.textContent = "Copy SHA-256"; }, 1800);
+            });
+          }
+        });
+      }
+
+      // Live-hydrate from latest.json so version, size, SHA, and notes never go stale
+      fetch("./latest.json?t=" + Date.now())
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data) return;
+          var ver = "v" + data.versionName;
+          var sizeMb = (data.sizeBytes / (1024 * 1024)).toFixed(1) + " MB";
+          var heroVer = document.getElementById("hero-version");
+          var heroSize = document.getElementById("hero-size");
+          var notesVer = document.getElementById("notes-version");
+          var notesEl = document.getElementById("release-notes");
+          var dlBtn = document.getElementById("download-btn");
+
+          if (heroVer) heroVer.textContent = ver;
+          if (heroSize) heroSize.textContent = sizeMb;
+          if (notesVer) notesVer.textContent = ver;
+          if (shaEl && data.sha256) shaEl.textContent = data.sha256;
+          if (dlBtn && data.apkUrl) dlBtn.href = data.apkUrl;
+          if (notesEl && data.releaseNotes) notesEl.textContent = data.releaseNotes;
+        })
+        .catch(function () {});
+    })();
+  </script>
 </body>
 </html>
