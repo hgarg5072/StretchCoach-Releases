@@ -1,8 +1,8 @@
 {
-  "versionCode": 16,
-  "versionName": "1.4.6",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.4.6/StretchCoach.apk",
-  "sha256": "28df4bc319e148924b62c9e9ba5c820ba1c628a7440f3ab23924aaed827a59f8",
+  "versionCode": 17,
+  "versionName": "1.4.7",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.4.7/StretchCoach.apk",
+  "sha256": "3cec562918ef433faad70034998891431b5052fa3c35f0faab74a03030559d14",
   "sizeBytes": 47179664,
-  "releaseNotes": "Fixed Cloud AI Routine Coach using Gemini 3.5 Flash-Lite with a 12-second deadline and automatic Instant Smart Flow offline backup, plus synced release notes to the redesigned Ghibli Sanctuary download page."
+  "releaseNotes": "Added a direct Delete button next to Rename on custom routines (with confirmation dialog), plus reliable Gemini 3.5 Flash-Lite AI Routine Coach with 12s deadline and Instant Smart Flow offline backup."
 }
