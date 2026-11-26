@@ -1,8 +1,8 @@
 {
-  "versionCode": 7,
-  "versionName": "1.2.3",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.2.3/StretchCoach.apk",
-  "sha256": "a530f955883214cae4ffa192b2548019300a81de7631aed57e27ccfd62dd5218",
-  "sizeBytes": 46715813,
-  "releaseNotes": "Fixed Roaming Puppy visibility on all poses (rests quietly in corner on wide poses and roams on open-floor poses), cleaner instant pet switching, and dialed companion size down ~10%."
+  "versionCode": 8,
+  "versionName": "1.3.0",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.3.0/StretchCoach.apk",
+  "sha256": "6ed64fb95732eba1f23f36584beacef4f944e01580781bddd0cae12752a5ea1c",
+  "sizeBytes": 46715817,
+  "releaseNotes": "Big floating AI Coach button on bottom-right, live NPU/TPU hardware chip display in AI Mode, Day Mode & cleaner timing-only voice defaults, removed Quick Verify demo, and renamed Subah Subah to Nisha's Custom Stretch."
 }
