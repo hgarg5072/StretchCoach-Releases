@@ -253,6 +253,89 @@
       gap: 10px;
     }
 
+    /* Demo Video Section */
+    .demo-section {
+      margin-top: 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: minmax(220px, 290px) 1fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: 0 12px 32px rgba(24, 38, 34, 0.06);
+    }
+
+    @media (max-width: 720px) {
+      .demo-section {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+    }
+
+    .demo-phone-wrap {
+      width: 100%;
+      max-width: 285px;
+      border-radius: 24px;
+      padding: 8px;
+      background: #17171a;
+      box-shadow: 0 16px 38px rgba(18, 28, 25, 0.24);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .demo-phone-wrap video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 17px;
+      background: #111;
+      object-fit: cover;
+    }
+
+    .demo-info h2 {
+      font-family: "Fraunces", Georgia, serif;
+      margin: 6px 0 10px;
+      font-size: 26px;
+      line-height: 1.2;
+    }
+
+    .demo-info p {
+      margin: 0 0 16px;
+      color: var(--muted, #5c574f);
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+
+    .demo-chapters {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      display: grid;
+      gap: 8px;
+      text-align: left;
+      font-size: 13.5px;
+    }
+
+    .demo-chapters li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .demo-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    @media (max-width: 720px) {
+      .demo-actions {
+        justify-content: center;
+      }
+    }
+
     /* Release Notes Banner */
     .release-banner {
       margin-top: 20px;
@@ -595,6 +678,9 @@
             </svg>
             <span>Download Android APK</span>
           </a>
+          <a class="btn-secondary" href="#demo-video">
+            ▶ Watch Demo (80s)
+          </a>
           <a class="btn-secondary" href="https://github.com/hgarg5072/StretchCoach-Releases/releases/latest" target="_blank" rel="noopener">
             View Release on GitHub
           </a>
@@ -614,8 +700,42 @@
     <section class="release-banner" aria-label="Latest release notes">
       <span class="release-tag">What's New</span>
       <div class="release-body">
-        <h2>Latest Release (<span id="notes-version">v1.2.3</span>)</h2>
+        <h2>Latest Release (<span id="notes-version">v1.4.5</span>)</h2>
         <p id="release-notes"><!--NOTES-->Shifted the top stretch name pill to the top-left (clear of the face on standing poses) and wired Seated Spinal Twist (Left &amp; Right) to its looping studio animation.<!--/NOTES--></p>
+      </div>
+    </section>
+
+    <!-- Demo & How-To Video -->
+    <section class="demo-section" id="demo-video" aria-label="Demo and how to use video">
+      <div class="demo-phone-wrap">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster="./assets/demo_poster.jpg"
+          src="./assets/StretchCoach_Demo_HowTo.mp4">
+          Your browser does not support embedded video.
+          <a href="./assets/StretchCoach_Demo_HowTo.mp4">Download the demo MP4</a>.
+        </video>
+      </div>
+      <div class="demo-info">
+        <span class="release-tag">Demo &amp; How-To • 80s</span>
+        <h2>See Stretch Coach in Action</h2>
+        <p>A quick portrait walkthrough with voiceover and studio meditation audio showing how to get started on Android.</p>
+        <ul class="demo-chapters">
+          <li>✨ <strong>Step 1–2:</strong> Routines, Smart Flow auto-ordering &amp; 135+ Asana Library</li>
+          <li>🧘 <strong>Step 3–4:</strong> Guided Studio Player, Zen Mode, Surya Namaskar &amp; animated twists</li>
+          <li>🐾 <strong>Step 5:</strong> Day/Sunset/Night lighting, Ghibli props &amp; Cozy Puppy / Calico Cat</li>
+          <li>🤖 <strong>Step 6:</strong> AI Routine Coach &amp; 1-tap in-app updates</li>
+        </ul>
+        <div class="demo-actions">
+          <a class="btn-primary" href="./assets/StretchCoach_Demo_HowTo.mp4" download>
+            Download Demo MP4 (14 MB)
+          </a>
+          <a class="btn-ghost" href="https://drive.google.com/file/d/16IrlBJ9GEelASyL3o6BWE6JKGuitBs-9/view" target="_blank" rel="noopener">
+            Watch on Google Drive
+          </a>
+        </div>
       </div>
     </section>
 
