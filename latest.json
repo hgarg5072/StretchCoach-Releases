@@ -1,8 +1,8 @@
 {
-  "versionCode": 15,
-  "versionName": "1.4.5",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.4.5/StretchCoach.apk",
-  "sha256": "b9c1f5d7cbe7e9cebf2d3c05f62695c75daf830ab639c8ebc5405feadf5c04ef",
+  "versionCode": 16,
+  "versionName": "1.4.6",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.4.6/StretchCoach.apk",
+  "sha256": "28df4bc319e148924b62c9e9ba5c820ba1c628a7440f3ab23924aaed827a59f8",
   "sizeBytes": 47179664,
-  "releaseNotes": "Shifted the top stretch name pill to the top-left (clear of the face on standing poses) and wired Seated Spinal Twist (Left & Right) to its looping studio animation."
+  "releaseNotes": "Fixed Cloud AI Routine Coach using Gemini 3.5 Flash-Lite with a 12-second deadline and automatic Instant Smart Flow offline backup, plus synced release notes to the redesigned Ghibli Sanctuary download page."
 }
