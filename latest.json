@@ -1,8 +1,8 @@
 {
-  "versionCode": 13,
-  "versionName": "1.4.3",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.4.3/StretchCoach.apk",
-  "sha256": "c001625a99d9573a9d192954f98ebd60c1048e25684ffcb341f45f65b0a5c654",
+  "versionCode": 14,
+  "versionName": "1.4.4",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.4.4/StretchCoach.apk",
+  "sha256": "55997f3234b25dfcebeda95b1d6949b1006063e91a4a9ac65e3094fee14e7dcd",
   "sizeBytes": 47179664,
-  "releaseNotes": "AI Routine Coach now switches automatically to Instant Smart Flow (offline, no chatbot) if no AI response arrives within 3 seconds."
+  "releaseNotes": "Fixed Pixel 9 Gemini Nano download (now actually downloads with live % progress and auto-activates Tensor TPU) and enforced a hard non-blocking 3-second Cloud cutoff to Instant Smart Flow."
 }
