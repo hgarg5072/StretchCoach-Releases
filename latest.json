@@ -1,8 +1,8 @@
 {
-  "versionCode": 10,
-  "versionName": "1.4.0",
-  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.4.0/StretchCoach.apk",
-  "sha256": "c7f33aa65a220a1cb6b903aa8ad608aa2289be209412ff2855fdf362c81e9041",
+  "versionCode": 11,
+  "versionName": "1.4.1",
+  "apkUrl": "https://github.com/hgarg5072/StretchCoach-Releases/releases/download/v1.4.1/StretchCoach.apk",
+  "sha256": "1886df5bb62286ca888d11412e73f199c36572f152d5db753444b7d35b133dd5",
   "sizeBytes": 47179664,
-  "releaseNotes": "Real AI-Only Routine Coach: Removed offline rule fallback, fixed R8 ProGuard keep rules for On-Device Gemini Nano (NPU/TPU) & Cloud Gemini 2.5 Flash, added stretch benefits to AI prompt, and added clickable 'Thinking' reasoning drawer."
+  "releaseNotes": "Upgraded Cloud AI Routine Coach to Gemini 3.8 Flash (fixes Gemini 2.5 Flash deprecation error) and updated AI dialog copy."
 }
